@@ -6,9 +6,15 @@ export const TodoForm = ({addTodo}) => {
     const handleSubmit = e => {
         e.preventDefault(); //prevents default event of refreshing page on form submission
 
-        addTodo(value)
+        if (value.trim() !== "") {
+            addTodo(value)
 
-        setValue("")
+            setValue("")
+        } else {
+            console.log("empty input")
+        }
+
+
     }
 
     return (
